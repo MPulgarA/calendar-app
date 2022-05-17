@@ -1,12 +1,32 @@
 import React from 'react'
+import { Calendar, momentLocalizer } from 'react-big-calendar';
+import moment from 'moment';
 import Navbar from '../ui/Navbar'
+// import 'react-big-calendar/lib/sass/styles';
+import "react-big-calendar/lib/css/react-big-calendar.css";
+
+const localizer = momentLocalizer(moment);
+
+const events = [{
+    title: 'All Day Event very long title',
+    allDay: true,
+    start: moment().toDate(), // newDate en moment
+    end: moment().add(2, 'hour').toDate(),
+    bgcolor: '#fafa'
+}]
 
 const CalendarScreen = () => {
     return (
-        <div>
-            <Navbar/>
+        <div className="calendar-screen">
+            <Navbar />
+            <Calendar
+                localizer={localizer}
+                events={events}
+                startAccessor="start"
+                endAccessor="end"
+            />
         </div>
     )
 }
 
-export default CalendarScreen
+export default CalendarScreen;
