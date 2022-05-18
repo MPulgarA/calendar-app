@@ -8,7 +8,7 @@ const Navbar = () => {
             </span>
 
             <button className="btn btn-outline-danger">
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <i className="fa-solid fa-arrow-right-from-bracket"></i>
                 <span> Salir</span>
             </button>
         </div>
